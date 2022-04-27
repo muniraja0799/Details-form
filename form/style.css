@@ -1,0 +1,110 @@
+* {
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #041c32;
+}
+
+.input {
+  display: flex;
+  margin-top: 15px;
+}
+
+input {
+  max-width: 300px;
+}
+
+input,
+textarea {
+  padding: 2px 8px 2px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  font-weight: 700;
+}
+
+textarea {
+  height: 150px;
+  max-width: 600px;
+}
+
+fieldset label {
+  margin-right: 15px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container button {
+  margin-left: 10px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+span {
+  margin-left: 10px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+/* From uiverse.io by @nikk7007 */
+button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #fff;
+}
+
+button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #fff;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
+}
+
+th,
+.tt {
+  text-align: center;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Student Form</title>
+</head>
+<style>
+    * {
+        text-transform: uppercase;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .input {
+        display: flex;
+        margin-top: 15px;
+    }
+
+
+    input {
+        max-width: 300px;
+    }
+
+    input,
+    textarea {
+        padding: 2px 8px 2px 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: black;
+    }
+
+    textarea {
+        height: 150px;
+        width: 600px;
+    }
+
+    fieldset label {
+        margin-right: 15px;
+    }
+
+    .btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-container button {
+        margin-left: 10px;
+    }
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        text-transform: uppercase;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+</style>
+
+<body class="bg-dark">
+    <div class="container col-12">
+        <div class="heading mt-4">
+            <h2>Student details</h2>
+        </div>
+        <form action="" id="myForm">
+            <div class=" row container py-5 ">
+                <div class="input1 input ">
+                    <label class="col-lg-3 col-md-12 " for="first name">FIRST NAME</label>
+                    <input class="col-3 form-control " type="text" maxlength="30"><span> (max 30 characters a-z and
+                        A-Z)</span>
+                </div>
+                <div class="input2 input">
+                    <label class="col-3" for="last name">LAST NAME</label>
+                    <input class="col-3 form-control" type="text" maxlength="30"><span> (max 30 characters a-z and
+                        A-Z)</span>
+                </div>
+                <div class="input3 input">
+                    <label class="col-3" for="date-of-birth">DATE OF BIRTH</label>
+                    <input class="col-3 form-control" type="date" id="start">
+                </div>
+                <div class="input4 input">
+                    <label class="col-3" for="">email id</label>
+                    <input class="col-3 form-control" type="email" id="email" pattern=".+@globex\.com" size="30">
+                </div>
+                <div class="input5 input">
+                    <label for="" class="col-3">mobile number</label>
+                    <input type="text" class="col-3 form-control" minlength="10" maxlength="10" pattern="[0-9]"><span>
+                        (10 digit
+                        number)</span>
+                </div>
+                <div class=" input6 input row">
+                    <label for="" class="col-3">gender</label>
+                    <div class="col-3">
+                        <fieldset>
+                            <input type="radio" id="male" name="gender">
+                            <label for="male">male</label>
+                            <input type="radio" id="female" name="gender">
+                            <label for="female">female</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="input7 input row">
+                    <label for="" class="col-3">Address</label>
+                    <div class="col-6">
+                        <textarea class=" col form-control" id="floatingTextarea"></textarea>
+                    </div>
+                </div>
+                <div class="input8 input">
+                    <label class="col-3" for="city">city</label>
+                    <input class="col-3 form-control" type="text" maxlength="30"><span> (max 30 characters a-z and
+                        A-Z)</span>
+                </div>
+                <div class="input9 input">
+                    <label class="col-3" for="pincode">pincode</label>
+                    <input class="col-3 form-control" type="number" minlength="6" maxlength="6" pattern="[0-9]"><span>
+                        (6 digit
+                        number)</span>
+                </div>
+                <div class=" input10 input">
+                    <label class="col-3" for="state name">state</label>
+                    <input class="col-3 form-control" type="text" maxlength="30"><span> (max 30 characters a-z and
+                        A-Z)</span>
+                </div>
+                <div class="input11 input">
+                    <label class="col-3" for="country name">country</label>
+                    <input class="col-3 form-control" type="text" value="india" maxlength="30"><span> (max 30 characters
+                        a-z and
+                        A-Z)</span>
+                </div>
+                <div class="input12 input row">
+                    <label for="" class="col-3">hobbies</label>
+                    <div class="col">
+                        <fieldset>
+                            <input type="checkbox" id="drawing" name="hobbies">
+                            <label for="male">drawing</label>
+                            <input type="checkbox" id="singing" name="hobbies"">
+                            <label for=" singing">singing</label>
+                            <input type="checkbox" id="dancing" name="hobbies">
+                            <label for="dancing">dancing</label>
+                            <input type="checkbox" id="sketching" name="hobbies">
+                            <label for="sketching">sketching</label>
+                            <div>
+                                <input type="checkbox" id="other" name="hobbies" onclick="disableEnableField()">
+                                <label for="male">other</label>
+                                <input id="other-field" type="text" disabled>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="input13 input row">
+                    <label for="" class="col-3">qualification</label>
+                    <div class="col-9 px-2">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">sl.no</th>
+                                    <th scope="col">Exaimination</th>
+                                    <th scope="col">board</th>
+                                    <th scope="col">percentage</th>
+                                    <th scope="col">year of passing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>class X</td>
+                                    <td><input class="form-control" type="text"></td>
+                                    <td><input class="form-control" type="text" minlength="2" maxlength="2"
+                                            pattern="[0-9]"></td>
+                                    <td><input class="form-control" type="text" minlength="4" maxlength="4"
+                                            pattern="[0-9]"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>class XII</td>
+                                    <td><input class="form-control" type="text"></td>
+                                    <td><input class="form-control" type="text" minlength="2" maxlength="2"
+                                            pattern="[0-9]"></td>
+                                    <td><input class="form-control" type="text" minlength="4" maxlength="4"
+                                            pattern="[0-9]"></td>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>graduation</td>
+                                    <td><input class="form-control" type="text"></td>
+                                    <td><input class="form-control" type="text" minlength="2" maxlength="2"
+                                            pattern="[0-9]"></td>
+                                    <td><input class="form-control" type="text" minlength="4" maxlength="4"
+                                            pattern="[0-9]"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>masters</td>
+                                    <td><input class="form-control" type="text"></td>
+                                    <td><input class="form-control" type="text" minlength="2" maxlength="2"
+                                            pattern="[0-9]"></td>
+                                    <td><input class="form-control" type="text" minlength="4" maxlength="4"
+                                            pattern="[0-9]"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td>(10 char max)</td>
+                                    <td>(upto 2 decimal)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="input14 input row ">
+                    <label for="" class="col-3">courses applied for</label>
+                    <div class="col">
+                        <fieldset class="">
+                            <input type="checkbox" id="bca" name="course">
+                            <label for="bca">bca</label>
+                            <input type="checkbox" id="bcom" name="course">
+                            <label for="bcom">b.com</label>
+                            <input type="checkbox" id="bsc" name="course">
+                            <label for="bsc">b.sc</label>
+                            <input type="checkbox" id="ba" name="course">
+                            <label for="ba">b.a</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="container btn-container mb-5">
+                <button class="btn btn-outline-light me-2">submit</button>
+                <button class="btn btn-outline-light" onclick="myFunction()">reset</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <!-- javascript code -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        var disabled = 0;
+        function disableEnableField() {
+
+            if (disabled == 1) { //disable
+                document.getElementById('other-field').disabled = true;
+                disabled = 0;
+            }
+            else {  //enable again
+                document.getElementById('other-field').disabled = false;
+                disabled = 1;
+            }
+        }
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+    <!-- javascript code end -->
+
+</body>
+
+</html>
